@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>苏州智蜂创元科技有限公司 - 掌握智能 · 蜂动未来</title>
+    <meta name="description" content="苏州智蜂创元科技有限公司，专注工业精密制造自动化解决方案，核心业务覆盖精密插拔、产线搬运、智能检测。">
+    <meta name="keywords" content="精密制造,自动化,插拔机器人,AGV搬运,视觉检测,智蜂创元,苏州">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <!-- ====== 导航栏 ====== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="nav-logo">
+                <div class="logo-icon">智</div>
+                <div class="logo-text">
+                    智蜂创元
+                    <small>ZHIFENG CHUANGYUAN</small>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/" class="active">首页</a></li>
+                <li><a href="/about.html">关于我们</a></li>
+                <li><a href="/products.html">产品服务</a></li>
+                <li><a href="/contact.html">联系我们</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ====== Hero 区域 ====== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">工业精密制造自动化专家</div>
+                <h1>
+                    掌握智能<span class="highlight"> · </span>蜂动未来<br>
+                    <span class="highlight">赋能工业精密制造</span>
+                </h1>
+                <p>
+                    专为工业精密制造场景打造，覆盖精密插拔、产线搬运、智能检测等核心环节，
+                    以自研伺服控制、机器视觉、智能调度技术，为客户构建高精度、高可靠性的智能制造装备与解决方案。
+                </p>
+                <div class="hero-actions">
+                    <a href="/products.html" class="btn btn-primary">
+                        了解产品
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="/contact.html" class="btn btn-outline">联系我们</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <svg viewBox="0 0 400 400" fill="none">
+                    <!-- 外圈 -->
+                    <circle cx="200" cy="200" r="180" stroke="rgba(30,111,255,0.2)" stroke-width="1" stroke-dasharray="4 4"/>
+                    <circle cx="200" cy="200" r="140" stroke="rgba(30,111,255,0.15)" stroke-width="1"/>
+                    <circle cx="200" cy="200" r="100" stroke="rgba(30,111,255,0.1)" stroke-width="1"/>
+                    
+                    <!-- 中心机器人臂 -->
+                    <g transform="translate(200,200)">
+                        <!-- 基座 -->
+                        <rect x="-30" y="80" width="60" height="20" rx="4" fill="#1E6FFF" opacity="0.8"/>
+                        <!-- 第一臂 -->
+                        <rect x="-8" y="20" width="16" height="65" rx="4" fill="url(#armGrad)"/>
+                        <!-- 关节 -->
+                        <circle cx="0" cy="20" r="10" fill="#4A8FFF"/>
+                        <!-- 第二臂 -->
+                        <rect x="-8" y="-40" width="16" height="65" rx="4" fill="url(#armGrad)" transform="rotate(15 0 20)"/>
+                        <!-- 关节2 -->
+                        <circle cx="0" cy="-40" r="8" fill="#4A8FFF" transform="rotate(15 0 20)"/>
+                        <!-- 末端执行器 -->
+                        <g transform="rotate(15 0 20) translate(0,-40)">
+                            <rect x="-15" y="-20" width="30" height="20" rx="3" fill="#FF8A00" opacity="0.9"/>
+                            <circle cx="0" cy="-10" r="4" fill="white" opacity="0.6"/>
+                        </g>
+                    </g>
+                    
+                    <!-- 轨道粒子 -->
+                    <circle cx="380" cy="200" r="4" fill="#1E6FFF" opacity="0.6"/>
+                    <circle cx="200" cy="20" r="3" fill="#FF8A00" opacity="0.5"/>
+                    <circle cx="60" cy="200" r="4" fill="#1E6FFF" opacity="0.4"/>
+                    <circle cx="200" cy="380" r="3" fill="#FF8A00" opacity="0.5"/>
+                    
+                    <!-- 数据点 -->
+                    <g opacity="0.4">
+                        <circle cx="120" cy="100" r="2" fill="#4A8FFF"/>
+                        <circle cx="280" cy="120" r="2" fill="#4A8FFF"/>
+                        <circle cx="300" cy="280" r="2" fill="#4A8FFF"/>
+                        <circle cx="100" cy="300" r="2" fill="#4A8FFF"/>
+                    </g>
+                    
+                    <defs>
+                        <linearGradient id="armGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#4A8FFF"/>
+                            <stop offset="100%" stop-color="#1E6FFF"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== 统计数据 ====== -->
+    <!-- <section class="section" style="padding: 60px 0;">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card fade-in-up">
+                    <div class="stat-number" id="stat-products">6</div>
+                    <div class="stat-label">核心产品</div>
+                </div>
+                <div class="stat-card fade-in-up">
+                    <div class="stat-number" id="stat-cases">3</div>
+                    <div class="stat-label">标杆案例</div>
+                </div>
+                <div class="stat-card fade-in-up">
+                    <div class="stat-number" id="stat-employee">200<span class="unit">+</span></div>
+                    <div class="stat-label">团队规模</div>
+                </div>
+                <div class="stat-card fade-in-up">
+                    <div class="stat-number" id="stat-patent">60<span class="unit">+</span></div>
+                    <div class="stat-label">专利技术</div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- ====== 核心业务 ====== -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">CORE BUSINESS</span>
+                <h2>三大核心业务板块</h2>
+                <p>覆盖精密制造全流程，为客户提供端到端的自动化解决方案</p>
+            </div>
+            <div class="business-grid">
+                <!-- 精密插拔 -->
+                <div class="business-card fade-in-up">
+                    <div class="card-visual">
+                        <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="15" y="10" width="50" height="60" rx="6"/>
+                            <line x1="25" y1="25" x2="55" y2="25"/>
+                            <line x1="25" y1="38" x2="55" y2="38"/>
+                            <circle cx="40" cy="52" r="6" fill="currentColor" opacity="0.3"/>
+                            <path d="M36 52 L39 55 L45 48"/>
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <h3>精密插拔</h3>
+                        <p>微米级精度的伺服驱动插拔设备，适用于精密连接器、电子元件的自动化装配，支持多品种柔性切换。</p>
+                        <div class="card-tags">
+                            <span>±5μm精度</span>
+                            <span>力控感知</span>
+                            <span>多工位协同</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 产线搬运 -->
+                <div class="business-card fade-in-up">
+                    <div class="card-visual">
+                        <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="20" y="30" width="40" height="28" rx="5"/>
+                            <circle cx="28" cy="62" r="7"/>
+                            <circle cx="52" cy="62" r="7"/>
+                            <path d="M30 30 L30 18 L50 18 L50 30"/>
+                            <line x1="24" y1="44" x2="56" y2="44"/>
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <h3>产线搬运</h3>
+                        <p>激光导航智能搬运AGV与输送系统，实现产线物料的高效、精准流转，支持多车协同调度。</p>
+                        <div class="card-tags">
+                            <span>SLAM导航</span>
+                            <span>300kg负载</span>
+                            <span>多车调度</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 智能检测 -->
+                <div class="business-card fade-in-up">
+                    <div class="card-visual">
+                        <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="40" cy="35" r="18"/>
+                            <circle cx="40" cy="35" r="7" fill="currentColor" opacity="0.3"/>
+                            <line x1="40" y1="10" x2="40" y2="17"/>
+                            <line x1="40" y1="53" x2="40" y2="60"/>
+                            <line x1="15" y1="35" x2="22" y2="35"/>
+                            <line x1="58" y1="35" x2="65" y2="35"/>
+                            <rect x="20" y="62" width="40" height="10" rx="3"/>
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <h3>智能检测</h3>
+                        <p>AI深度学习视觉检测与质量管控系统，覆盖外观检测、尺寸测量、缺陷识别，检出率高达99.5%。</p>
+                        <div class="card-tags">
+                            <span>深度学习</span>
+                            <span>99.5%检出率</span>
+                            <span>在线全检</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== 产品亮点 ====== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">PRODUCTS</span>
+                <h2>当前产品</h2>
+                <p>每一款产品都经过严格的测试验证，为精密制造保驾护航。</p>
+            </div>
+            <div class="product-grid" id="featured-products">
+                <!-- 产品卡片由 JS 动态加载 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== 标杆案例 ====== -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">CASES</span>
+                <h2>标杆案例</h2>
+                <p>来自3C电子、汽车零部件、半导体等行业的信赖之选</p>
+            </div>
+            <div class="case-grid" id="home-cases">
+                <!-- 案例卡片由 JS 动态加载 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== 新闻动态 ====== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">NEWS</span>
+                <h2>新闻动态</h2>
+                <p>了解智蜂创元最新资讯与行业洞察</p>
+            </div>
+            <div class="news-grid" id="home-news">
+                <!-- 新闻卡片由 JS 动态加载 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CTA ====== -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>开启您的智能制造升级之旅</h2>
+            <p>无论您处于哪个行业，我们都能为您提供量身定制的精密制造自动化解决方案</p>
+            <a href="/contact.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.6);">立即咨询</a>
+        </div>
+    </section>
+
+    <!-- ====== 页脚 ====== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">智</div>
+                        <span>智蜂创元</span>
+                    </div>
+                    <p>苏州智蜂创元科技有限公司，专注工业精密制造自动化解决方案，以技术创新驱动智能制造升级。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/about.html">关于我们</a></li>
+                        <li><a href="/products.html">产品服务</a></li>
+                        <li><a href="/contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>业务领域</h4>
+                    <ul>
+                        <li><a href="/products.html">精密插拔</a></li>
+                        <li><a href="/products.html">产线搬运</a></li>
+                        <li><a href="/products.html">智能检测</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span id="footer-phone">商务 | 武先生18550031029</span>
+                        <span id="footer-phone">产品 | 贺先生15607312561</span>
+                        <span id="footer-phone">其它 | 张女士17625304496</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span id="footer-email">contact@zhifeng-tech.com</span>
+                        <span id="footer-email">商务 | 武先生 andy.wu@reinbee.com</span>
+                        <span id="footer-email">产品 | 贺先生 lothar.he@reinbee.com</span>
+                        <span id="footer-email">其它 | 张女士 waterlily.zhang@reinbee.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span id="footer-address">苏州市工业园区独墅湖科教创新区1</span>
+                        <span id="footer-address">苏州市工业园区胜浦路168号旭创光电产业园3i栋3楼</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> <span id="footer-copyright">苏州智蜂创元科技有限公司</span> 版权所有 | 苏ICP备2024XXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部 -->
+    <button class="back-to-top" aria-label="返回顶部">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
+    <!-- 产品详情弹窗 -->
+    <div class="modal-overlay" id="product-modal">
+        <div class="modal" id="modal-content"></div>
+    </div>
+
+    <script src="/js/main.js"></script>
+    <script>
+        // 首页数据加载
+        document.addEventListener('DOMContentLoaded', async () => {
+            // 加载统计数据
+            loadStats();
+
+            // 加载明星产品（取前6个）
+            const products = await loadProducts();
+            const featured = products.slice(0, 6);
+            const productGrid = document.getElementById('featured-products');
+            if (productGrid) {
+                productGrid.innerHTML = featured.map(renderProductCard).join('');
+            }
+
+            // 加载案例
+            const cases = await loadCases();
+            const caseGrid = document.getElementById('home-cases');
+            if (caseGrid) {
+                caseGrid.innerHTML = cases.slice(0, 3).map(renderCaseCard).join('');
+            }
+
+            // 加载新闻
+            const news = await loadNews(3);
+            const newsGrid = document.getElementById('home-news');
+            if (newsGrid) {
+                newsGrid.innerHTML = news.map(renderNewsCard).join('');
+            }
+
+            // 重新观察新添加的动画元素
+            initScrollAnimation();
+        });
+    </script>
+</body>
+</html>
