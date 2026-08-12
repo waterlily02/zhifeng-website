@@ -3,32 +3,41 @@ import numpy as np
 
 img = Image.open("logo_white.jpg").convert("RGB")
 arr = np.array(img)
-height, width = arr.shape[:2]
-print(f"图片尺寸: {width} x {height}")
-print(f"总像素: {width * height}")
+h, w = arr.shape[:2]
+r, g, b = arr[:,:,0].astype(int), arr[:,:,1].astype(int), arr[:,:,2].astype(int)
+brightness = (r + g + b) / 3
 
-# 颜色聚类分析
-pixels = arr.reshape(-1, 3)
-# 按颜色出现频率统计
-unique, counts = np.unique(pixels, axis=0, return_counts=True)
-order = np.argsort(-counts)
-print("\n=== 前20种主要颜色 ===")
-for i in range(min(20, len(unique))):
-    r, g, b = unique[order[i]]
-    count = counts[order[i]]
-    pct = count / len(pixels) * 100
-    print(f"RGB({r:3d},{g:3d},{b:3d}) 数量:{count:8d} 占比:{pct:5.2f}%")
+orng = (r > 200) & (g > 100) & (g < 220) & (b < 120)
+# 近白：非纯白且亮度 235-254（可能是浅灰白文字）
+near_white = ~orng & (brightness >= 235) & (brightness < 255)
+pure_bg = (r == 255) & (g == 255) & (b == 255)
 
-# 背景亮度分析
-brightness = np.mean(arr, axis=2)
-print(f"\n亮度统计: min={brightness.min():.1f}, max={brightness.max():.1f}, mean={brightness.mean():.1f}")
-print(f"高亮区域(>240)占比: {(brightness > 240).sum() / brightness.size * 100:.2f}%")
-print(f"白色区域(>250)占比: {(brightness > 250).sum() / brightness.size * 100:.2f}%")
+print(f"近白(235-254)像素: {near_white.sum()} ({near_white.sum()/(w*h)*100:.3f}%)")
+print(f"纯白背景像素: {pure_bg.sum()} ({pure_bg.sum()/(w*h)*100:.3f}%)")
 
-# 前景颜色分析（非高亮区域）
-mask = brightness < 230
-fg_pixels = pixels[mask]
-if len(fg_pixels) > 0:
-    print(f"\n前景像素占比: {len(fg_pixels)/len(pixels)*100:.2f}%")
-    print(f"前景平均RGB: {fg_pixels.mean(axis=0).astype(int)}")
-    print(f"前景RGB范围: R={fg_pixels[:,0].min()}-{fg_pixels[:,0].max()}, G={fg_pixels[:,1].min()}-{fg_pixels[:,1].max()}, B={fg_pixels[:,2].min()}-{fg_pixels[:,2].max()}")
+# 近白像素位置统计
+ys, xs = np.where(near_white)
+if len(ys):
+    print(f"近白像素范围: x={xs.min()}-{xs.max()}, y={ys.min()}-{ys.max()}")
+
+# 每格3px字符画：x 1000-2200, y 430-780
+scale = 3
+y0, y1, x0, x1 = 430, 780, 1000, 2200
+print(f"\n近白像素分布字符画（每格={scale}px, x {x0}-{x1}, y {y0}-{y1}）")
+print("图例: #=近白密集  W=近白  O=橙色  o=淡橙  ' '=纯白")
+for y in range(y0, y1, scale):
+    row = ""
+    for x in range(x0, x1, scale):
+        nw = near_white[y:y+scale, x:x+scale].sum()
+        og = orng[y:y+scale, x:x+scale].sum()
+        if og > 3:
+            row += "O"
+        elif og > 1:
+            row += "o"
+        elif nw > 4:
+            row += "#"
+        elif nw > 0:
+            row += "W"
+        else:
+            row += " "
+    print(f"{y:4d}|{row}|")
