@@ -83,13 +83,13 @@ CREATE TABLE IF NOT EXISTS cases (
 -- ============================================================
 
 -- 产品分类
-INSERT INTO product_categories (name, description, sort_order) VALUES
+INSERT OR IGNORE INTO product_categories (name, description, sort_order) VALUES
 ('精密插拔', '高精度插拔设备与解决方案，适用于各类精密连接器、电子元件的自动化插拔作业', 1),
 ('产线搬运', '智能搬运机器人与输送系统，实现产线物料的高效、精准流转', 2),
 ('智能检测', 'AI视觉检测与质量管控系统，覆盖外观检测、尺寸测量、缺陷识别等场景', 3);
 
 -- 产品数据
-INSERT INTO products (category_id, name, subtitle, description, features, specs, image_url, sort_order) VALUES
+INSERT OR IGNORE INTO products (category_id, name, subtitle, description, features, specs, image_url, sort_order) VALUES
 (1, 'ZF-P100 精密插拔机器人', '微米级精度，适用于精密连接器自动化装配',
  'ZF-P100 是专为精密连接器、电子元件插拔场景设计的高精度机器人系统，采用伺服驱动与力控技术，实现微米级定位精度，支持多品种柔性切换。',
  '["伺服驱动系统，定位精度 ±5μm","力控感知，插拔力实时监测","多规格夹具快速换型","MES系统无缝对接","7×24小时稳定运行"]',
@@ -127,7 +127,7 @@ INSERT INTO products (category_id, name, subtitle, description, features, specs,
  '/images/products/v200.svg', 2);
 
 -- 公司信息
-INSERT INTO company_info (key_name, value) VALUES
+INSERT OR IGNORE INTO company_info (key_name, value) VALUES
 ('company_name', '苏州智蜂创元科技有限公司'),
 ('company_short', '智蜂创元'),
 ('company_slogan', '智造精密 · 蜂领未来'),
@@ -143,7 +143,7 @@ INSERT INTO company_info (key_name, value) VALUES
 ('fax', '0512-6288 8889');
 
 -- 新闻数据
-INSERT INTO news (title, summary, content, cover_url, category, sort_order) VALUES
+INSERT OR IGNORE INTO news (title, summary, content, cover_url, category, sort_order) VALUES
 ('智蜂创元发布新一代ZF-V100 AI视觉检测系统', '全新深度学习算法引擎，缺陷检出率提升至99.5%',
  '近日，智蜂创元正式发布新一代ZF-V100 AI视觉检测系统。该系统搭载自研深度学习算法引擎，支持2D/3D视觉融合检测，缺陷检出率提升至99.5%，误判率降低至0.1%以下，已在多家3C电子龙头企业产线成功部署。',
  '/images/news/news1.svg', '公司动态', 1),
@@ -155,7 +155,7 @@ INSERT INTO news (title, summary, content, cover_url, category, sort_order) VALU
  '/images/news/news3.svg', '合作动态', 3);
 
 -- 案例数据
-INSERT INTO cases (title, client, industry, description, image_url, sort_order) VALUES
+INSERT OR IGNORE INTO cases (title, client, industry, description, image_url, sort_order) VALUES
 ('某3C电子龙头连接器自动化产线项目', '国内头部3C电子企业', '3C电子',
  '为客户定制8条精密连接器自动化插拔产线，集成ZF-P200多工位插拔工作站与ZF-V100视觉检测系统，产线效率提升200%，良率从98.5%提升至99.8%。',
  '/images/cases/case1.svg', 1),
