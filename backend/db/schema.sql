@@ -136,9 +136,6 @@ INSERT OR IGNORE INTO company_info (key_name, value) VALUES
 ('registered_capital', '5000万元'),
 ('employee_count', '200+'),
 ('patent_count', '60+'),
-('address', '苏州市工业园区独墅湖科教创新区启月街288号'),
-('phone', '0512-6288 8888'),
-('email', 'contact@zhifeng-tech.com'),
 ('website', 'www.zhifeng-tech.com'),
 ('fax', '0512-6288 8889');
 
