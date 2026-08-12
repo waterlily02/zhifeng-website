@@ -314,6 +314,11 @@ ul {
     letter-spacing: -1px;
 }
 
+.hero h1 .hero-line {
+    display: inline-block;
+    white-space: nowrap;
+}
+
 .hero h1 .highlight {
     background: linear-gradient(135deg, var(--color-accent-light), #6BA6FF);
     -webkit-background-clip: text;
@@ -1481,7 +1486,7 @@ ul {
 
 /* ====== 响应式 ====== */
 @media (max-width: 1024px) {
-    .hero h1 { font-size: 40px; }
+    .hero h1 { font-size: 36px; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .business-grid,
     .product-grid,
