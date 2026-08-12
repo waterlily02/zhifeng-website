@@ -146,9 +146,9 @@ ul {
 }
 
 .nav-logo .logo-img {
-    height: 44px;
+    height: 52px;
     width: auto;
-    max-width: 200px;
+    max-width: 220px;
     object-fit: contain;
     display: block;
 }
@@ -1382,9 +1382,9 @@ ul {
 }
 
 .footer-brand .footer-logo .logo-img {
-    height: 38px;
+    height: 44px;
     width: auto;
-    max-width: 170px;
+    max-width: 180px;
     object-fit: contain;
     display: block;
 }
