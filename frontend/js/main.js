@@ -172,11 +172,14 @@ async function loadProducts(categoryId = null) {
 // ====== 渲染产品卡片 ======
 function renderProductCard(product) {
     const features = (product.features || []).slice(0, 3).map(f => `<li>${f}</li>`).join('');
+    const imageHtml = product.image_url
+        ? `<img src="${product.image_url}" alt="${product.name}" loading="lazy">`
+        : getProductIcon(product.category_id);
     return `
         <div class="product-card fade-in-up" onclick="showProductDetail(${product.id})">
             <div class="product-image">
                 ${product.categoryName ? `<span class="product-badge">${product.categoryName}</span>` : ''}
-                ${getProductIcon(product.category_id)}
+                ${imageHtml}
             </div>
             <div class="product-body">
                 <h3>${product.name}</h3>
@@ -230,6 +233,7 @@ async function showProductDetail(id) {
     const specs = Object.entries(p.specs || {}).map(([k, v]) =>
         `<tr><th>${k}</th><td>${v}</td></tr>`
     ).join('');
+    const imageHtml = p.image_url ? `<div class="modal-image"><img src="${p.image_url}" alt="${p.name}"></div>` : '';
 
     const modal = document.getElementById('product-modal');
     const modalContent = document.getElementById('modal-content');
@@ -240,12 +244,13 @@ async function showProductDetail(id) {
             <button class="modal-close" onclick="closeModal()">&times;</button>
         </div>
         <div class="modal-body">
+            ${imageHtml}
             <p class="modal-subtitle">${p.subtitle || ''}</p>
             <p class="modal-desc">${p.description || ''}</p>
-            
+
             <div class="modal-section-title">核心特点</div>
             <ul class="feature-list">${features}</ul>
-            
+
             <div class="modal-section-title">技术规格</div>
             <table class="spec-table">${specs}</table>
         </div>
